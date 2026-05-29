@@ -41,7 +41,7 @@ UNIQUE (code_course)
 
 CREATE TABLE enrollments (
 id_enrollment int AUTO_INCREMENT,
-id_user int,
+id_user int NOT null,
 code_course varchar(10) NOT null,
 date_register timestamp DEFAULT CURRENT_TIMESTAMP(),
 PRIMARY KEY (id_enrollment),
@@ -190,4 +190,4 @@ SELECT u.name AS name_instructor, COUNT(c.id_course) AS jumlah_course_dibuat
 FROM users u
 LEFT JOIN courses c ON u.id_user = c.id_instructor
 WHERE u.role = 'instructor'
-GROUP BY u.id_user, u.name;
+GROUP BY u.id_user;
