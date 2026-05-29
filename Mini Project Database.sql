@@ -5,6 +5,7 @@ CREATE TABLE users (
 id_user int AUTO_INCREMENT,
 name varchar(100),
 email varchar(100),
+password varchar(255) NOT NULL,
 role enum('student', 'instructor') NOT NULL DEFAULT 'student',
 PRIMARY KEY (id_user),
 UNIQUE (email)
@@ -50,22 +51,22 @@ FOREIGN KEY (code_course) REFERENCES courses (code_course)
 	ON DELETE CASCADE ON UPDATE CASCADE	
 );
 
-INSERT INTO users (name, email, role) VALUES
-('Budi Santoso', 'budi.santoso@email.com', 'instructor'),
-('Siti Aminah', 'siti.aminah@email.com', 'instructor'),
-('Rian Hidayat', 'rian.hidayat@email.com', 'instructor'),
-('Dewi Lestari', 'dewi.lestari@email.com', 'instructor'),
-('Eko Prasetyo', 'eko.prasetyo@email.com', 'instructor'),
-('Andi Wijaya', 'andi.wijaya@email.com', 'student'),
-('Citra Kirana', 'citra.kirana@email.com', 'student'),
-('Dimas Saputra', 'dimas.saputra@email.com', 'student'),
-('Elena Putri', 'elena.putri@email.com', 'student'),
-('Fahmi Idris', 'fahmi.idris@email.com', 'student'),
-('Gita Gutawa', 'gita.gutawa@email.com', 'student'),
-('Hendra Wijaya', 'hendra.wijaya@email.com', 'student'),
-('Indah Permata', 'indah.permata@email.com', 'student'),
-('Joko Widodo', 'joko.widodo@email.com', 'student'),
-('Kevin Sanjaya', 'kevin.sanjaya@email.com', 'student');
+INSERT INTO users (name, email, password, role) VALUES
+('Budi Santoso', 'budi.santoso@email.com', 'password123', 'instructor'),
+('Siti Aminah', 'siti.aminah@email.com', 'password123', 'instructor'),
+('Rian Hidayat', 'rian.hidayat@email.com', 'password123', 'instructor'),
+('Dewi Lestari', 'dewi.lestari@email.com', 'password123', 'instructor'),
+('Eko Prasetyo', 'eko.prasetyo@email.com', 'password123', 'instructor'),
+('Andi Wijaya', 'andi.wijaya@email.com', 'rahasia123', 'student'),
+('Citra Kirana', 'citra.kirana@email.com', 'rahasia123', 'student'),
+('Dimas Saputra', 'dimas.saputra@email.com', 'rahasia123', 'student'),
+('Elena Putri', 'elena.putri@email.com', 'rahasia123', 'student'),
+('Fahmi Idris', 'fahmi.idris@email.com', 'rahasia123', 'student'),
+('Gita Gutawa', 'gita.gutawa@email.com', 'rahasia123', 'student'),
+('Hendra Wijaya', 'hendra.wijaya@email.com', 'rahasia123', 'student'),
+('Indah Permata', 'indah.permata@email.com', 'rahasia123', 'student'),
+('Joko Widodo', 'joko.widodo@email.com', 'rahasia123', 'student'),
+('Kevin Sanjaya', 'kevin.sanjaya@email.com', 'rahasia123', 'student');
 
 INSERT INTO course_categories (code_category, name_category, desc_course_cat) VALUES
 ('WEB', 'Web Development', 'Belajar membuat website modern dari dasar hingga mahir.'),
